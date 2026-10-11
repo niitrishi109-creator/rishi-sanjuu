@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff5c9a">
+    <title>Rishi ❤️ Sanjuu | Our Love Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hearts-background" aria-hidden="true">
+        <span>❤️</span><span>💕</span><span>💗</span>
+        <span>💖</span><span>💘</span><span>💝</span>
+    </div>
+
+    <header class="topbar">
+        <a href="#" class="brand" aria-label="Rishi and Sanjuu Love Quiz">
+            💗 Rishi <span>×</span> Sanjuu
+        </a>
+        <div class="header-actions">
+            <span id="levelBadge" class="level-badge">Level 1 / 100</span>
+            <button id="soundToggle" class="icon-btn" type="button"
+                aria-label="Toggle sound">🔊</button>
+        </div>
+    </header>
+
+    <main class="app-container">
+
+        <!-- WELCOME SCREEN -->
+        <section id="welcome" class="screen active">
+            <div class="hero-card">
+                <div class="hero-emoji">💑</div>
+                <p class="eyebrow">A GAME MADE WITH LOVE</p>
+                <h1>Rishi <span class="heart-text">❤️</span> Sanjuu</h1>
+                <h2>Our Love Quiz</h2>
+                <p class="hero-description">
+                    How well do you know each other?
+                    Play together, collect rewards and create your love story.
+                </p>
+
+                <div class="couple-avatars">
+                    <div class="avatar-card">
+                        <div class="avatar" id="rishiAvatar">🧑🏻</div>
+                        <strong>Rishi</strong>
+                        <span>Your turn partner</span>
+                    </div>
+                    <div class="avatar-heart">💕</div>
+                    <div class="avatar-card">
+                        <div class="avatar" id="sanjuuAvatar">👩🏻</div>
+                        <strong>Sanjuu</strong>
+                        <span>Your love partner</span>
+                    </div>
+                </div>
+
+                <div class="saved-progress">
+                    <span>🏆 Your journey</span>
+                    <strong id="savedLevel">Level 1</strong>
+                    <p id="savedProgressText">Your saved progress will appear here.</p>
+                </div>
+
+                <button id="startBtn" class="primary-btn" type="button">
+                    Start Our Love Story 💖
+                </button>
+
+                <p class="small-note">Two players · One love story · 100 levels</p>
+            </div>
+
+            <!-- LOVE METER -->
+            <div class="feature-card love-meter-card">
+                <div class="feature-heading">
+                    <span class="feature-icon">💘</span>
+                    <div>
+                        <h3>Love Meter</h3>
+                        <p>Watch your connection grow!</p>
+                    </div>
+                </div>
+                <div class="love-meter-track">
+                    <div id="loveMeterFill" class="love-meter-fill"></div>
+                </div>
+                <p id="loveMeterText">Your love journey starts at 0% 💗</p>
+            </div>
+
+            <!-- REWARDS -->
+            <div class="feature-card">
+                <div class="feature-heading">
+                    <span class="feature-icon">🎁</span>
+                    <div>
+                        <h3>Secret Rewards</h3>
+                        <p>Unlock surprises as you level up.</p>
+                    </div>
+                </div>
+                <div id="rewardsList" class="rewards-list">
+                    <div class="reward-item">🔒 <span>First Reward</span></div>
+                    <div class="reward-item">🔒 <span>Love Surprise</span></div>
+                    <div class="reward-item">🔒 <span>Secret Treasure</span></div>
+                </div>
+            </div>
+
+            <!-- COUPLE BADGES -->
+            <div class="feature-card">
+                <div class="feature-heading">
+                    <span class="feature-icon">🏆</span>
+                    <div>
+                        <h3>Couple Badges & Streaks</h3>
+                        <p>Celebrate your achievements together.</p>
+                    </div>
+                </div>
+                <div id="badgesList" class="badges-list">
+                    <div class="badge-item">💞 <span>Lovebirds</span></div>
+                    <div class="badge-item">✨ <span>Perfect Match</span></div>
+                    <div class="badge-item">🔥 <span>Love Streak</span></div>
+                </div>
+                <p id="streakText">Your couple streak begins today! 💕</p>
+            </div>
+
+            <!-- LOVE LETTER -->
+            <div class="feature-card">
+                <div class="feature-heading">
+                    <span class="feature-icon">💌</span>
+                    <div>
+                        <h3>Secret Love Letter</h3>
+                        <p>A little surprise for Sanjuu.</p>
+                    </div>
+                </div>
+                <button id="openLetterBtn" class="secondary-btn" type="button">
+                    Open Secret Letter 💌
+                </button>
+            </div>
+
+            <!-- LOVE WHEEL -->
+            <div class="feature-card">
+                <div class="feature-heading">
+                    <span class="feature-icon">🎡</span>
+                    <div>
+                        <h3>Spin the Love Wheel</h3>
+                        <p>Discover a cute couple challenge.</p>
+                    </div>
+                </div>
+                <div id="wheelResult" class="wheel-result">
+                    Your surprise is waiting! 🎀
+                </div>
+                <button id="spinWheelBtn" class="secondary-btn" type="button">
+                    Spin Our Love Wheel 🎡
+                </button>
+            </div>
+
+            <!-- MEMORIES BOOK -->
+            <div class="feature-card">
+                <div class="feature-heading">
+                    <span class="feature-icon">📸</span>
+                    <div>
+                        <h3>Our Memories Book</h3>
+                        <p>Save your favourite moments together.</p>
+                    </div>
+                </div>
+                <label for="memoryInput">Write a special memory</label>
+                <textarea id="memoryInput" rows="3"
+                    placeholder="Our favourite moment together was..."></textarea>
+                <button id="saveMemoryBtn" class="secondary-btn" type="button">
+                    Save Memory 💗
+                </button>
+                <div id="memoriesList" class="memories-list">
+                    <p class="small-note">Your saved memories will appear here.</p>
+                </div>
+            </div>
+
+            <!-- MIDNIGHT MODE -->
+            <div class="feature-card midnight-card">
+                <div class="feature-heading">
+                    <span class="feature-icon">🌙</span>
+                    <div>
+                        <h3>Midnight Love Mode</h3>
+                        <p>A dreamy night-time look for your love game.</p>
+                    </div>
+                </div>
+                <button id="midnightModeBtn" class="secondary-btn" type="button">
+                    🌙 Turn On Midnight Mode
+                </button>
+            </div>
+        </section>
+
+        <!-- QUIZ SCREEN -->
+        <section id="quiz" class="screen">
+            <div class="quiz-card">
+                <div class="quiz-topline">
+                    <span id="turnLabel">Rishi's Turn 💙</span>
+                    <span id="progressText">Question 1 of 20</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-fill"></div>
+                </div>
+
+                <div class="question-meta">
+                    <span id="questionNumber">Question 1</span>
+                    <span id="currentLevelLabel">Level 1</span>
+                </div>
+
+                <h2 id="questionText">Your question will appear here.</h2>
+
+                <div id="options" class="options-list"></div>
+
+                <p id="errorText" class="error-text" role="status"></p>
+
+                <button id="nextBtn" class="primary-btn" type="button">
+                    Submit Answer 💖
+                </button>
+            </div>
+
+            <div class="quiz-love-meter">
+                <span>💘 Love Meter</span>
+                <div class="love-meter-track">
+                    <div id="quizLoveMeterFill" class="love-meter-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHONE PASS SCREEN -->
+        <section id="handoff" class="screen">
+            <div class="handoff-card">
+                <div class="handoff-emoji">📱💕</div>
+                <p class="eyebrow">PASS THE PHONE</p>
+                <h2 id="handoffTitle">Sanjuu, your turn!</h2>
+                <p id="handoffText">
+                    Give the phone to the next player when you're ready.
+                </p>
+                <button id="continueBtn" class="primary-btn" type="button">
+                    I'm Ready 💗
+                </button>
+            </div>
+        </section>
+
+        <!-- RESULT SCREEN -->
+        <section id="result" class="screen">
+            <div class="result-card">
+                <div class="result-emoji">💞</div>
+                <p class="eyebrow">YOUR COUPLE RESULT</p>
+                <h1 id="resultTitle">Beautiful Together!</h1>
+                <div class="match-score-circle">
+                    <strong id="matchScore">0%</strong>
+                    <span>Love Match</span>
+                </div>
+
+                <p id="resultMessage">
+                    Every moment together makes your story special.
+                </p>
+
+                <div class="score-grid">
+                    <div class="score-box">
+                        <span>🧑🏻 Rishi</span>
+                        <strong id="rishiScore">0</strong>
+                    </div>
+                    <div class="score-box">
+                        <span>👩🏻 Sanjuu</span>
+                        <strong id="sanjuuScore">0</strong>
+                    </div>
+                </div>
+
+                <div class="result-progress">
+                    <span>🏆 Level Progress</span>
+                    <p id="resultLevelText">Level 1 completed</p>
+                </div>
+
+                <h3>Your Love Highlights 💖</h3>
+                <div id="matchList" class="match-list"></div>
+
+                <div id="levelReward" class="level-reward">
+                    🎁 Keep playing to unlock surprises!
+                </div>
+
+                <button id="restartBtn" class="primary-btn" type="button">
+                    Play This Level Again 🔄
+                </button>
+                <button id="nextLevelBtn" class="secondary-btn" type="button">
+                    Continue to Next Level ➜
+                </button>
+                <button id="homeBtn" class="text-btn" type="button">
+                    Back to Home 🏠
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECRET LETTER MODAL -->
+    <div id="letterModal" class="modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true"
+            aria-labelledby="letterTitle">
+            <button id="closeLetterBtn" class="modal-close" type="button"
+                aria-label="Close letter">✕</button>
+            <div class="modal-emoji">💌</div>
+            <h2 id="letterTitle">For My Sanjuu ❤️</h2>
+            <div id="loveLetterContent" class="love-letter-content">
+                <p>Dear Sanjuu,</p>
+                <p>
+                    You make ordinary moments feel magical.
+                    Every smile, every laugh and every little memory
+                    makes our story more beautiful.
+                </p>
+                <p>
+                    No quiz can measure everything you mean to me.
+                    I hope we keep creating beautiful memories together.
+                </p>
+                <p>Forever your Rishi 💗</p>
+            </div>
+            <button id="closeLetterBottomBtn" class="primary-btn" type="button">
+                Aww, Close 💕
+            </button>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+        <p>Made with ❤️ by Rishi, for Sanjuu</p>
+        <p>One love story · A hundred levels · Endless memories</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
